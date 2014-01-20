@@ -14,6 +14,7 @@
                   "/css/bootstrap-theme.min.css")
       (include-js "/js/jquery.min.js"
                   "/js/bootstrap.min.js"
-                  "/js/ember.min.js")
+                  "/js/handlebars.js"
+                  "/js/ember.js")
       [:title title]]
     [:body body]))
