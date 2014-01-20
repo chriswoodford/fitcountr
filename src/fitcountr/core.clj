@@ -1,10 +1,20 @@
 (ns fitcountr.core
   (:use [compojure.core :only (defroutes GET)]
         [ring.adapter.jetty :as ring])
-  (:require [fitcountr.views.static :as static]))
+  (:require [compojure.route :as route]
+            [compojure.handler :as handler]
+            [fitcountr.views.static :as static])
+  (:gen-class))
 
 (defroutes routes
-  (GET "/" [] (static/home)))
+  (GET "/" [] (static/home))
+  (route/resources "/"))
+
+(def application (handler/site routes))
+
+(defn start [port]
+  (run-jetty application {:port port
+                          :join? false}))
 
 (defn -main []
-  (run-jetty #'routes {:port 5000 :join? false}))
+  (start 5000))
