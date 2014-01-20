@@ -12,6 +12,8 @@
       [:meta {:author "Chris Woodford @chriswoodford"}]
       (include-css "/css/bootstrap.min.css"
                   "/css/bootstrap.theme.css")
-      (include-js "/js/bootstrap.min.js")
+      (include-js "/js/jquery.min.js"
+                  "/js/bootstrap.min.js"
+                  "/js/ember.min.js")
       [:title title]]
     [:body body]))
