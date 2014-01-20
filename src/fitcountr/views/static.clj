@@ -3,4 +3,8 @@
   (:require [fitcountr.views.layouts :as layouts]))
 
 (defn home []
-  (layouts/application "fitcountr" "<h2>Welcome Home</h2>"))
+  (layouts/application
+    "fitcountr"
+    (layouts/hbs
+      "MAMA. MAMA I'M COMIN' HOOOOOME"
+      "home")))
