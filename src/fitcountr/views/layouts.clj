@@ -19,7 +19,8 @@
       [:meta {:description ""}]
       [:meta {:author "Chris Woodford @chriswoodford"}]
       (include-css "/css/bootstrap.min.css"
-                  "/css/bootstrap-theme.min.css")
+                  "/css/bootstrap-theme.min.css"
+                  "/css/app.css")
       (include-js "/js/jquery.min.js"
                   "/js/bootstrap.min.js"
                   "/js/handlebars.js"
@@ -56,4 +57,5 @@
   (layout
     title
     template
-    (hbs (str (header) "{{outlet}}") nil)))
+    (hbs
+      (str (header) (html [:div "{{outlet}}"])) nil)))
